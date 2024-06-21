@@ -1,4 +1,4 @@
-from sqlalchemy import BigInteger, String, ForeignKey, DateTime
+from sqlalchemy import BigInteger, String, DateTime
 from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column
 from sqlalchemy.ext.asyncio import AsyncAttrs, async_sessionmaker, create_async_engine
 from dotenv import load_dotenv
@@ -21,6 +21,13 @@ class User(Base):
     created_at = mapped_column(DateTime)
     status: Mapped[str] = mapped_column(String(10))
     status_updated_at = mapped_column(DateTime)
+
+
+class Trigger(Base):
+    __tablename__ = 'triggers'
+    id: Mapped[int] = mapped_column(primary_key=True)
+    user_id = mapped_column(BigInteger)
+    message_id = mapped_column(BigInteger)
 
 
 async def async_main():
