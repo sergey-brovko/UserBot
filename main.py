@@ -1,11 +1,12 @@
 import asyncio
 from app.database.models import async_main
-from app.handlers import app_run, check_triggers
+from app.handlers import app_run
 
 
 async def main():
+    await app_run()
     await async_main()
-    # await app_run()
+
 
 
 if __name__ == '__main__':
