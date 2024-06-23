@@ -46,7 +46,7 @@ async def app_run():
 
     async with app:
         while True:
-            await filter_users_by_step((timedelta(minutes=1), 'Text1'),
-                                       (timedelta(minutes=1), 'Text2'),
-                                       (timedelta(minutes=1), 'Text3'))
+            await filter_users_by_step((timedelta(minutes=6), 'Text1'),
+                                       (timedelta(minutes=39), 'Text2'),
+                                       (timedelta(days=1, hours=2), 'Text3'))
             await asyncio.sleep(5)
