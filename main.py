@@ -4,9 +4,8 @@ from app.handlers import app_run
 
 
 async def main():
-    await app_run()
     await async_main()
-
+    await app_run()
 
 
 if __name__ == '__main__':

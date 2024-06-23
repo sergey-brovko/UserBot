@@ -21,7 +21,8 @@ class User(Base):
     created_at = mapped_column(DateTime)
     status: Mapped[str] = mapped_column(String(10))
     status_updated_at = mapped_column(DateTime)
-    send_message: Mapped[str] = mapped_column(String(20))
+    send_message_at = mapped_column(DateTime)
+    send_message_num: Mapped[int] = mapped_column()
 
 
 class Trigger(Base):
